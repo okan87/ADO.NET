@@ -7,7 +7,5 @@ SqlCommand cmd = new SqlCommand("Select * From Kitap", con);
 
 SqlDataReader sqlDataReader = cmd.ExecuteReader();
 
-*-*-*-SqlDataAdapter uses for convert
-
-SqlDataAdapter adapter = new SqlDataAdapter();
+SqlDataAdapter adapter = new SqlDataAdapter(); ==> You can act on the DataTable.
                 
