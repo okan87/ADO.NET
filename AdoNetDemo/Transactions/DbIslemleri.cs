@@ -12,10 +12,11 @@ namespace AdoNetDemo.Transactions
         {
             sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
             sqlConnectionStringBuilder.ConnectionString = 
-                "Server=DESKTOP-312A3RM\\SQLEXPRESS;Database=EFCoreDemoDB;Trusted_Connection=True;Encrypt=False";
+                "Server=DESKTOP-312A3RM\\SQLEXPRESS;Database=AdoNetDemoDB;Trusted_Connection=True;Encrypt=False";
             con = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
         }
 
+        //Burasi Sql komutunun duzgun calistidigini kontrol etmek icin kullanir
         public int ExecuteCommand(SqlCommand cmd)
         {
             int result = 0;
@@ -41,7 +42,6 @@ namespace AdoNetDemo.Transactions
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Select * From Kitap", con);
-                SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlDataReader sqlDataReader = cmd.ExecuteReader();
                 List<Kitap> kitaps = new List<Kitap>();
                 while (sqlDataReader.Read())
